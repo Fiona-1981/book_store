@@ -83,6 +83,7 @@ Define the attributes of your Model class. You can usually map the table columns
 class Book
 
   # Replace the attributes by your own columns.
+  # Define my .all method?
   attr_accessor :id, :title, :author_name
 end
 
@@ -123,12 +124,12 @@ class BookRepository
 
   # Gets a single record by its ID
   # One argument: the id (number)
-  def find(id)
+  # def find(id)
     # Executes the SQL query:
     # SELECT id, title, author_name FROM books WHERE id = $1;
 
     # Returns a single Book object.
-  end
+  # end
 
   # Add more methods below for each operation you'd like to implement.
 
@@ -178,38 +179,38 @@ books[1].author_name # =>  'Virginia Woolf'
 # 2
 # Get a single book
 
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.find(1)
+# book = repo.find(1)
 
-book.id # =>  1
-book.title # =>  'Nineteen Eighty-Four'
-book.author_name # =>  'George Orwell'
+# book.id # =>  1
+# book.title # =>  'Nineteen Eighty-Four'
+# book.author_name # =>  'George Orwell'
 
 # Add more examples for each method
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.create(1)
+# book = repo.create(1)
 
-book.id # =>  1
-book.title # =>  'Nineteen Eighty-Four'
-book.author_name # =>  'George Orwell'
+# book.id # =>  1
+# book.title # =>  'Nineteen Eighty-Four'
+# book.author_name # =>  'George Orwell'
 
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.update(1)
+# book = repo.update(1)
 
-book.id # =>  1
-book.title # =>  'Nineteen Eighty-Four'
-book.author_name # =>  'George Orwell'
+# book.id # =>  1
+# book.title # =>  'Nineteen Eighty-Four'
+# book.author_name # =>  'George Orwell'
 
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.delete(1)
+# book = repo.delete(1)
 
-book.id # =>  1
-book.title # =>  'Nineteen Eighty-Four'
-book.author_name # =>  'George Orwell'
+# book.id # =>  1
+# book.title # =>  'Nineteen Eighty-Four'
+# book.author_name # =>  'George Orwell'
 
 ```
 
@@ -228,7 +229,7 @@ This is so you get a fresh table contents every time you run the test suite.
 
 def reset_books_table
   seed_sql = File.read('spec/seeds_books.sql')
-  connection = PG.connect({ host: '127.0.0.1', dbname: 'books' })
+  connection = PG.connect({ host: '127.0.0.1', dbname: 'book_store_test' })
   connection.exec(seed_sql)
 end
 

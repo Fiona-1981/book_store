@@ -3,6 +3,7 @@ require 'book_repository'
 
 # 1
 # Get all books
+# The question only wants us to retrieve all.
 
 repo = BookRepository.new
 
@@ -21,32 +22,32 @@ expect(books[1].author_name).to eq('Virginia Woolf')
 # 2
 # Get a single book
 
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.find(1)
+# book = repo.find(1)
 
-expect(book.id).to eq('1')
-expect(book.title).to eq('Nineteen Eighty-Four')
-expect(book.author_name).to eq('George Orwell')
+# expect(book.id).to eq('1')
+# expect(book.title).to eq('Nineteen Eighty-Four')
+# expect(book.author_name).to eq('George Orwell')
 
 # Add more examples for each method
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.create(1)
+# book = repo.create(1)
 
-expect(book.id).to eq('1')
-expect(book.title).to eq('Nineteen Eighty-Four')
-expect(book.author_name).to eq('George Orwell')
+# expect(book.id).to eq('1')
+# expect(book.title).to eq('Nineteen Eighty-Four')
+# expect(book.author_name).to eq('George Orwell')
 
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.update(1)
+# book = repo.update(1)
 
-expect(book.id).to eq('1')
-expect(book.title).to eq('Nineteen Eighty-Four')
-expect(book.author_name).to eq('George Orwell')
+# expect(book.id).to eq('1')
+# expect(book.title).to eq('Nineteen Eighty-Four')
+# expect(book.author_name).to eq('George Orwell')
 
-repo = BookRepository.new
+# repo = BookRepository.new
 
-book = repo.delete(1)
+# book = repo.delete(1)
 
